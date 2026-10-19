@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: auto-insurance-platform
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://iamstaging.the-grydd.com/tenants/d9c7d81d-1ec3-4794-88d1-e433f814db4f
+          audience: api://dev-auto-insurance-api
+  datasource:
+    url: jdbc:postgresql://192.168.0.32:5432/dev-insurance-Management-db
+    username: dev-insurance
+    password: wwP7xrWUMy
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
